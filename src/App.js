@@ -31,7 +31,7 @@ export default class App extends Component {
 
   fetchData() {
     // fetch global stats
-    fetch('http://api.coronastatistics.live/all')
+    fetch('https://api.coronastatistics.live/all')
     .then(results => {
       return results.json();
     }).then(globalData => {
@@ -39,7 +39,7 @@ export default class App extends Component {
     })
 
     // fetch global stats timeline
-    fetch('http://api.coronastatistics.live/timeline/global')
+    fetch('https://api.coronastatistics.live/timeline/global')
     .then(results => {
       return results.json();
     }).then(globalTimeline => {
