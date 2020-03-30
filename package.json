@@ -1,6 +1,6 @@
 {
   "name": "coronavirus-tracker",
-  "homepage": "http://adamparr.github.io/coronavirus-tracker",
+  "homepage": "http://adamparr.github.io/coronavirus-tracker/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
