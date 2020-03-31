@@ -1,8 +1,8 @@
-html { background-color: #213144; color: white; }
+html { background-color: #232731; color: white; }
 
 header h1 { text-align: center; margin: 30px; }
 
-.MuiPaper-root.card { background-color: #333; color: white; padding: 1.5rem; }
+.MuiPaper-root.card { background-color: #2e333e; color: white; padding: 1.5rem; }
 .MuiPaper-root.card h3 { font-size: 1.25rem; font-weight: 500; margin: 0; position: relative; top: -5px;}
 .MuiPaper-root.card .stat { font-size: 2.25rem; display: block; text-align: right; }
 .MuiPaper-root.card .prevStat { font-size: 1rem; display: block; text-align: right; margin-top: 7px; }
@@ -10,3 +10,8 @@ header h1 { text-align: center; margin: 30px; }
 .bar.blue { background-color: blue; }
 .bar.red { background-color: red; }
 .bar.green { background-color: green; }
+
+.recharts-line-dots { display: none; }
+.recharts-line-curve { stroke-width: 2; }
+.recharts-cartesian-grid line { stroke: rgba(255,255,255,.2); stroke-dasharray: none; }
+.recharts-yAxis tspan, .recharts-xAxis tspan { fill: white; margin: 5px; }
