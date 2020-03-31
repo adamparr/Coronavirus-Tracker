@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Header from "./components/Header";
+import Footer from './components/Footer';
 import Global from "./components/sections/Global";
 import HistoryLineChart from './components/sections/HistoryLineChart';
 import CircularBarChart from './components/sections/CircularBarChart'
@@ -30,7 +31,7 @@ export default class App extends Component {
   }
 
   componentDidMount = () => {
-    if (this.state.data == null) this.fetchData();
+    this.fetchData();
   };
 
   fetchData() {
@@ -56,7 +57,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header lastUpdated={this.state.globalData} />
         <Container className="globalStats">
           <Grid container spacing={3} justify="center">
             <Global
@@ -67,6 +68,7 @@ export default class App extends Component {
             <HistoryLineChart timeline={this.state.globalTimeline} />
           </Grid>
         </Container>
+        <Footer />
       </div>
     );
   }

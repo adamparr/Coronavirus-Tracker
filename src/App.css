@@ -1,6 +1,11 @@
 html { background-color: #232731; color: white; }
 
-header h1 { text-align: center; margin: 30px; }
+header { text-align: center; margin: 30px; }
+header * { margin: 0; }
+header p { margin-top: 10px; font-size: .9rem; font-color: rgb(207, 207, 207); }
+
+footer { text-align: center; font-size: .9rem; color: rgb(207, 207, 207); margin: 30px 0; }
+footer a { color: inherit; }
 
 .MuiPaper-root.card { background-color: #2e333e; color: white; padding: 1.5rem; }
 .card-title { font-size: 1.1rem; font-weight: 600; margin: 0; position: relative; top: -5px; letter-spacing: 1px; }
