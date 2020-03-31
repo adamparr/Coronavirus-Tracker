@@ -17,7 +17,7 @@ export default function HistoryLineChart({timeline}) {
           date,
           cases: timeline[key]['cases'], 
           deaths: timeline[key]['deaths'], 
-          recovered: timeline[key]['recovered']
+          recovered: timeline[key]['recovered'],
         }
       )
     })
@@ -32,9 +32,9 @@ export default function HistoryLineChart({timeline}) {
     return (
       <div className="custom-tooltip">
         <p className="tt-label">{label}</p>
-        <p className="tt-stat" style={{backgroundColor: 'blue'}}>Cases: <span>{numberWithCommas(payload[0].value)}</span></p>
-        <p className="tt-stat" style={{backgroundColor: 'red'}}>Deaths: <span>{numberWithCommas(payload[1].value)}</span></p>
-        <p className="tt-stat" style={{backgroundColor: 'green'}}>Recovered: <span>{numberWithCommas(payload[2].value)}</span></p>
+        <p className="tt-stat" style={{backgroundColor: '#438ce6'}}>Cases: <span>{numberWithCommas(payload[0].value)}</span></p>
+        <p className="tt-stat" style={{backgroundColor: '#e24f3f'}}>Deaths: <span>{numberWithCommas(payload[1].value)}</span></p>
+        <p className="tt-stat" style={{backgroundColor: '#47bd61'}}>Recovered: <span>{numberWithCommas(payload[2].value)}</span></p>
       </div>
     )
   }
@@ -48,9 +48,9 @@ export default function HistoryLineChart({timeline}) {
             <XAxis dataKey="date" />
             <YAxis />
             <Tooltip content={<CustomTooltip />} />
-            <Line type="monotone" dataKey="cases" stroke="blue" />
-            <Line type="monotone" dataKey="deaths" stroke="red" />
-            <Line type="monotone" dataKey="recovered" stroke="green" />
+            <Line type="monotone" dataKey="cases" stroke="#438ce6" />
+            <Line type="monotone" dataKey="deaths" stroke="#e24f3f" />
+            <Line type="monotone" dataKey="recovered" stroke="#47bd61" />
           </LineChart>
         </ResponsiveContainer>
       </Card>

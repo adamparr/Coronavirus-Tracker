@@ -7,9 +7,9 @@ header h1 { text-align: center; margin: 30px; }
 .MuiPaper-root.card .stat { font-size: 2.25rem; display: block; text-align: right; }
 .MuiPaper-root.card .prevStat { font-size: 1rem; display: block; text-align: right; margin-top: 7px; }
 .MuiPaper-root.card .bar { width: 100%; height: 5px; margin-top: 25px; border-radius: 5px; }
-.bar.blue { background-color: blue; }
-.bar.red { background-color: red; }
-.bar.green { background-color: green; }
+.bar.blue { background-color: #438ce6; }
+.bar.red { background-color: #e24f3f; }
+.bar.green { background-color: #47bd61; }
 
 .recharts-line-dots { display: none; }
 .recharts-line-curve { stroke-width: 2; }
