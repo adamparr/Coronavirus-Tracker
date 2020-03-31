@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Global from "./components/sections/Global";
 import HistoryLineChart from './components/sections/HistoryLineChart';
+import CircularBarChart from './components/sections/CircularBarChart'
 
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
@@ -62,6 +63,7 @@ export default class App extends Component {
               data={this.state.globalData}
               timeline={this.state.globalTimeline}
             />
+            <CircularBarChart data={this.state.globalData} />
             <HistoryLineChart timeline={this.state.globalTimeline} />
           </Grid>
         </Container>

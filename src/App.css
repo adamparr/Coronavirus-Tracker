@@ -21,3 +21,5 @@ header h1 { text-align: center; margin: 30px; }
 .custom-tooltip .tt-label { margin: 5px 0; }
 .custom-tooltip .tt-stat { display: block; text-align: left; font-size: 1rem; font-weight: 400; }
 .custom-tooltip .tt-stat span { float: right; margin-left: 20px; }
+
+.radial .recharts-default-legend { position: relative; top: 10px; display: flex; flex-direction: row-reverse; justify-content: center; }
