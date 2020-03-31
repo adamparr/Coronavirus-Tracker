@@ -2,6 +2,7 @@ import React from "react"
 import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card'
 import dateFormat from 'dateformat'
+import numberWithCommas from '../../Helpers'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 
 export default function HistoryLineChart({timeline}) {
@@ -18,6 +19,19 @@ export default function HistoryLineChart({timeline}) {
     )
   })
 
+  const CustomTooltip = ({ payload, label, active }) => {
+    if (!active) return null;
+
+    return (
+      <div className="custom-tooltip">
+        <p className="tt-label">{label}</p>
+        <p className="tt-stat" style={{backgroundColor: 'blue'}}>Cases: <span>{numberWithCommas(payload[0].value)}</span></p>
+        <p className="tt-stat" style={{backgroundColor: 'red'}}>Deaths: <span>{numberWithCommas(payload[1].value)}</span></p>
+        <p className="tt-stat" style={{backgroundColor: 'green'}}>Recovered: <span>{numberWithCommas(payload[2].value)}</span></p>
+      </div>
+    )
+  }
+
   return (
     <Grid xs sm={8} item>
       <Card className="card" style={{ height: 400 }}>
@@ -26,7 +40,7 @@ export default function HistoryLineChart({timeline}) {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="date" />
             <YAxis />
-            <Tooltip />
+            <Tooltip content={<CustomTooltip />} />
             <Line type="monotone" dataKey="cases" stroke="blue" />
             <Line type="monotone" dataKey="deaths" stroke="red" />
             <Line type="monotone" dataKey="recovered" stroke="green" />
