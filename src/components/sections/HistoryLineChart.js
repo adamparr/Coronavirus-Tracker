@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card'
 import dateFormat from 'dateformat'
@@ -7,17 +7,24 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 
 export default function HistoryLineChart({timeline}) {
 
-  const timelineArray = Object.keys(timeline).map(key => {
-    const date = dateFormat(key, "mmm d");
-    return (
-      {
-        date,
-        cases: timeline[key]['cases'], 
-        deaths: timeline[key]['deaths'], 
-        recovered: timeline[key]['recovered']
-      }
-    )
-  })
+  const [timelineArray, setTimelineArray] = useState([]);
+
+  useEffect(() => {
+    const tempArray = Object.keys(timeline).map(key => {
+      const date = dateFormat(key, "mmm d");
+      return (
+        {
+          date,
+          cases: timeline[key]['cases'], 
+          deaths: timeline[key]['deaths'], 
+          recovered: timeline[key]['recovered']
+        }
+      )
+    })
+
+    setTimelineArray(tempArray);
+
+  }, [timeline])
 
   const CustomTooltip = ({ payload, label, active }) => {
     if (!active) return null;
