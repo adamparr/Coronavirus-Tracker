@@ -43,7 +43,7 @@ export default function HistoryLineChart({timeline}) {
     return nFormatter(value);
   }
 
-  const duration = 4000;
+  const duration = 3000;
 
   return (
     <Grid xs={12} md={8} item>

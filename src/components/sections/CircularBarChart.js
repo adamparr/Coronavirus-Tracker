@@ -52,13 +52,13 @@ export default function CircularBarChart({ data }) {
             data={data} 
             startAngle={135} 
             endAngle={-135}
-            barSize={70}
+            barSize={40}
           >
             <RadialBar
               cornerRadius={10}
               background={{fill: '#232731'}}
               dataKey="value"
-              animationDuration={4000}
+              animationDuration={3000}
             />
             <Tooltip content={<CustomTooltip/>} />
             <Legend verticalAlign="top" height={10}/>
