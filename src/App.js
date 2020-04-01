@@ -4,7 +4,8 @@ import Header from "./components/Header";
 import Footer from './components/Footer';
 import Global from "./components/sections/Global";
 import HistoryLineChart from './components/sections/HistoryLineChart';
-import CircularBarChart from './components/sections/CircularBarChart'
+import CircularBarChart from './components/sections/CircularBarChart';
+import CountriesTable from './components/sections/CountriesTable';
 
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
@@ -26,7 +27,10 @@ export default class App extends Component {
           deaths: 0,
           recovered: 0
         }
-      }
+      },
+      countriesByCases: [
+        {}
+      ]
     };
   }
 
@@ -52,6 +56,15 @@ export default class App extends Component {
       .then(globalTimeline => {
         this.setState({ globalTimeline });
       });
+
+    // fetch countries sorted by cases
+    fetch("http://api.coronastatistics.live/countries?sort=cases")
+      .then(results => {
+        return results.json();
+      })
+      .then(countriesByCases => {
+        this.setState({ countriesByCases });
+      });
   }
 
   render() {
@@ -66,6 +79,7 @@ export default class App extends Component {
             />
             <CircularBarChart data={this.state.globalData} />
             <HistoryLineChart timeline={this.state.globalTimeline} />
+            <CountriesTable data={this.state.countriesByCases} />
           </Grid>
         </Container>
         <Footer />

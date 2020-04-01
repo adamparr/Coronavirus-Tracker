@@ -28,3 +28,20 @@ footer a { color: inherit; }
 .custom-tooltip .tt-stat span { float: right; margin-left: 20px; }
 
 .radial .recharts-default-legend { position: relative; top: 10px; display: flex; flex-direction: row-reverse; justify-content: center; }
+
+.countriesTable .card { padding: 0; }
+.countriesTable .MuiTableCell-stickyHeader { color: white; background-color: #1a1d27; }
+.countriesTable .MuiTableCell-body { color: white; }
+.countriesTable .MuiTablePagination-root { color: white; background-color: #1a1d27; }
+.countriesTable .MuiSelect-icon { color: rgba(255,255,255,.5)!important; }
+.countriesTable .MuiIconButton-root.Mui-disabled { color: rgba(255,255,255,.5)!important; } 
+.MuiTableRow-root > td:first-of-type { font-weight: 500; }
+.MuiTableRow-root > th:first-of-type,
+.MuiTableRow-root > td:first-of-type
+ { padding-left: 30px; }
+ .MuiTableRow-root > th:last-of-type,
+.MuiTableRow-root > td:last-of-type
+ { padding-right: 30px; }
+ 
+ .countriesTable .MuiTableHead-root th { padding-top: 20px; padding-bottom: 20px; }
+ .countriesTable .MuiTablePagination-root { padding: 10px!important; }
