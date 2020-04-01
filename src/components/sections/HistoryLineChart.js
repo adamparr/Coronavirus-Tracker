@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card'
 import moment from 'moment'
-import numberWithCommas from '../../Helpers'
+import numberWithCommas, {nFormatter} from '../../Helpers'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 
 export default function HistoryLineChart({timeline}) {
@@ -39,6 +39,10 @@ export default function HistoryLineChart({timeline}) {
     )
   }
 
+  const formatter = (value) => {
+    return nFormatter(value);
+  }
+
   return (
     <Grid xs={12} md={8} item>
       <Card className="card" style={{ height: 400 }}>
@@ -46,8 +50,8 @@ export default function HistoryLineChart({timeline}) {
         <ResponsiveContainer>
           <LineChart margin={{top: 30,right: 15,bottom: 15,left: 15}} data={timelineArray}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="date" />
-            <YAxis />
+            <XAxis height={60} tickMargin={10} minTickGap={15} dataKey="date" />
+            <YAxis width={30} tickFormatter={formatter} />
             <Tooltip content={<CustomTooltip />} />
             <Line type="monotone" dataKey="cases" stroke="#438ce6" />
             <Line type="monotone" dataKey="deaths" stroke="#e24f3f" />
