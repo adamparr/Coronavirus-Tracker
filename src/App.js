@@ -6,6 +6,7 @@ import Global from "./components/sections/Global";
 import HistoryLineChart from './components/sections/HistoryLineChart';
 import CircularBarChart from './components/sections/CircularBarChart';
 import CountriesTable from './components/sections/CountriesTable';
+import Loading from './components/Loading';
 
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
@@ -15,22 +16,9 @@ export default class App extends Component {
     super(props);
 
     this.state = {
-      globalData: {
-        cases: 0,
-        deaths: 0,
-        recovered: 0,
-        updated: 0
-      },
-      globalTimeline: {
-        "2020-01-01": {
-          cases: 0,
-          deaths: 0,
-          recovered: 0
-        }
-      },
-      countriesByCases: [
-        {}
-      ]
+      globalData: null, 
+      globalTimeline: null,
+      countriesByCases: null
     };
   }
 
@@ -67,7 +55,9 @@ export default class App extends Component {
       });
   }
 
+
   render() {
+    if (!this.state.globalData || !this.state.globalTimeline || !this.state.countriesByCases ) return <Loading />
     return (
       <div className="App">
         <Header lastUpdated={this.state.globalData.updated} />
