@@ -58,7 +58,7 @@ export default class App extends Component {
       });
 
     // fetch countries sorted by cases
-    fetch("http://api.coronastatistics.live/countries?sort=cases")
+    fetch("https://api.coronastatistics.live/countries?sort=cases")
       .then(results => {
         return results.json();
       })
