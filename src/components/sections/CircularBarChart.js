@@ -5,8 +5,11 @@ import {
   RadialBarChart,
   RadialBar,
   Legend,
-  ResponsiveContainer
+  ResponsiveContainer,
+  Tooltip
 } from "recharts";
+
+import numberWithCommas from '../../Helpers'
 
 export default function CircularBarChart({ data }) {
   data = [
@@ -27,6 +30,17 @@ export default function CircularBarChart({ data }) {
     }
   ];
 
+  const CustomTooltip = ({ payload, label, active }) => {
+    if (!active) return null;
+    payload = payload[0].payload;
+
+    return (
+      <div className={`custom-tooltip ${ payload.name}`}>
+        <p className="tt-label">{payload.name}: {numberWithCommas(payload.value)}</p>
+      </div>
+    )
+  }
+
   return (
     <Grid xs={12} md={4} className="radial" item>
       <Card className="card" style={{ height: 400, position: 'relative' }}>
@@ -34,19 +48,20 @@ export default function CircularBarChart({ data }) {
         <ResponsiveContainer>
           <RadialBarChart
             innerRadius="30%" 
+            outerRadius="100%"
             data={data} 
-            startAngle={90} 
-            endAngle={-180}
-            barSize={40}
+            startAngle={135} 
+            endAngle={-135}
+            barSize={70}
           >
             <RadialBar
-              minAngle={15}
-              label={{ fill: "#fff", position: "insideStart" }}
+              cornerRadius={10}
               background={{fill: '#232731'}}
-              clockwise
               dataKey="value"
+              animationDuration={4000}
             />
-            <Legend verticalAlign="top" height={36}/>
+            <Tooltip content={<CustomTooltip/>} />
+            <Legend verticalAlign="top" height={10}/>
           </RadialBarChart>
         </ResponsiveContainer>
       </Card>

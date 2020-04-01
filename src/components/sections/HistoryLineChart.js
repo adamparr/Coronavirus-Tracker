@@ -43,19 +43,21 @@ export default function HistoryLineChart({timeline}) {
     return nFormatter(value);
   }
 
+  const duration = 4000;
+
   return (
     <Grid xs={12} md={8} item>
       <Card className="card" style={{ height: 400 }}>
         <h3 className="card-title">Change Over Time</h3>
         <ResponsiveContainer>
           <LineChart margin={{top: 30,right: 15,bottom: 15,left: 15}} data={timelineArray}>
-            <CartesianGrid strokeDasharray="3 3" />
+            <CartesianGrid />
             <XAxis height={60} tickMargin={10} minTickGap={15} dataKey="date" />
             <YAxis width={30} tickFormatter={formatter} />
             <Tooltip content={<CustomTooltip />} />
-            <Line type="monotone" dataKey="cases" stroke="#438ce6" />
-            <Line type="monotone" dataKey="deaths" stroke="#e24f3f" />
-            <Line type="monotone" dataKey="recovered" stroke="#47bd61" />
+            <Line animationDuration={duration} type="monotone" dataKey="cases" stroke="#438ce6" />
+            <Line animationDuration={duration} type="monotone" dataKey="deaths" stroke="#e24f3f" />
+            <Line animationDuration={duration} type="monotone" dataKey="recovered" stroke="#47bd61" />
           </LineChart>
         </ResponsiveContainer>
       </Card>

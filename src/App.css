@@ -18,7 +18,9 @@ footer a { color: inherit; }
 
 .recharts-line-dots { display: none; }
 .recharts-line-curve { stroke-width: 2; }
-.recharts-cartesian-grid line { stroke: rgba(255,255,255,.2); stroke-dasharray: none; }
+.recharts-cartesian-grid line { stroke: #1a1d27; stroke-dasharray: none; }
+.recharts-cartesian-axis-line { display: none; }
+.recharts-cartesian-axis-tick-line { stroke: #1a1d27; }
 .recharts-yAxis tspan, .recharts-xAxis tspan { fill: white; margin: 5px; }
 
 .custom-tooltip { overflow: hidden; background: #262b35; box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12); border-radius: 4px;}
@@ -26,6 +28,9 @@ footer a { color: inherit; }
 .custom-tooltip .tt-label { margin: 5px 0; }
 .custom-tooltip .tt-stat { display: block; text-align: left; font-size: 1rem; font-weight: 400; }
 .custom-tooltip .tt-stat span { float: right; margin-left: 20px; }
+.custom-tooltip.cases { background: #438ce6; }
+.custom-tooltip.recovered { background: #47bd61; }
+.custom-tooltip.deaths { background: #e24f3f; }
 
 .radial .recharts-default-legend { position: relative; top: 10px; display: flex; flex-direction: row-reverse; justify-content: center; }
 
