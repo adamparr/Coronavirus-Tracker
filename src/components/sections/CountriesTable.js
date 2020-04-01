@@ -10,6 +10,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 
+import numberWithCommas from '../../Helpers'
+
 const columns = [
   { id: 'country', label: 'Country', align: 'left' },
   { id: 'cases', label: 'Cases' },
@@ -62,7 +64,7 @@ export default function CountriesTable({data}) {
                     const value = row[column.id];
                     return (
                       <TableCell key={`${column.id}-${value}`} align={column.align ? column.align : 'center'}>
-                        { ((column.id === 'todayCases' || column.id === "todayDeaths") && value) ? '+' : null}{value ? value : '-'}
+                        { ((column.id === 'todayCases' || column.id === "todayDeaths") && value) ? '+' : null}{value ? numberWithCommas(value) : '-'}
                       </TableCell>
                     );
                   })}
