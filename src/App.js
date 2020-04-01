@@ -57,7 +57,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header lastUpdated={this.state.globalData} />
+        <Header lastUpdated={this.state.globalData.updated} />
         <Container className="globalStats">
           <Grid container spacing={3} justify="center">
             <Global

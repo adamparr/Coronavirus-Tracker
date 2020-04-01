@@ -1,14 +1,14 @@
 import React from 'react'
-import dateFormat from 'dateformat'
+import moment from 'moment'
 
 export default function Header({lastUpdated}) {
 
-  const now = new Date();
-  lastUpdated = now - lastUpdated;
+  lastUpdated = lastUpdated / 1000;
+
   return (
     <header>
       <h1>Coronavirus Tracker</h1> 
-      <p>Last updated {dateFormat(lastUpdated, "M")} minutes ago</p>
+      <p>Last updated {moment.unix(lastUpdated).fromNow()}</p>
     </header>
   )
 }

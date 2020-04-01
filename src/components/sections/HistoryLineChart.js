@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card'
-import dateFormat from 'dateformat'
+import moment from 'moment'
 import numberWithCommas from '../../Helpers'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 
@@ -11,7 +11,7 @@ export default function HistoryLineChart({timeline}) {
 
   useEffect(() => {
     const tempArray = Object.keys(timeline).map(key => {
-      const date = dateFormat(key, "mmm d");
+      const date = moment(key).format("MMM D");
       return (
         {
           date,
@@ -40,7 +40,7 @@ export default function HistoryLineChart({timeline}) {
   }
 
   return (
-    <Grid xs md={8} item>
+    <Grid xs={12} md={8} item>
       <Card className="card" style={{ height: 400 }}>
         <h3 className="card-title">Change Over Time</h3>
         <ResponsiveContainer>
