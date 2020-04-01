@@ -28,7 +28,7 @@ export default function CircularBarChart({ data }) {
   ];
 
   return (
-    <Grid xs md={4} className="radial" item>
+    <Grid xs={12} md={4} className="radial" item>
       <Card className="card" style={{ height: 400, position: 'relative' }}>
         <h3 className="card-title">Radial Visualisation</h3>
         <ResponsiveContainer>
