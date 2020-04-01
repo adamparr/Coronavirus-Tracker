@@ -62,7 +62,7 @@ export default function CountriesTable({data}) {
                     const value = row[column.id];
                     return (
                       <TableCell key={`${column.id}-${value}`} align={column.align ? column.align : 'center'}>
-                        { ((column.id === 'todayCases' || column.id === "todayDeaths") && value) ? '+' : null} {value ? value : '-'}
+                        { ((column.id === 'todayCases' || column.id === "todayDeaths") && value) ? '+' : null}{value ? value : '-'}
                       </TableCell>
                     );
                   })}
