@@ -63,7 +63,11 @@ export default function CountriesTable({data}) {
                   {columns.map((column) => {
                     const value = row[column.id];
                     return (
-                      <TableCell key={`${column.id}-${value}`} align={column.align ? column.align : 'center'}>
+                      <TableCell 
+                      key={`${column.id}-${value}`} 
+                      align={column.align ? column.align : 'center'}
+                      className={((column.id === 'todayCases' || column.id === "todayDeaths") && value) ? 'highlight' : null}
+                      >
                         { ((column.id === 'todayCases' || column.id === "todayDeaths") && value) ? '+' : null}{value ? numberWithCommas(value) : '-'}
                       </TableCell>
                     );

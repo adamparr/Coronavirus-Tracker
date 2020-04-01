@@ -40,6 +40,7 @@ footer a { color: inherit; }
 .countriesTable .MuiTablePagination-root { color: white; background-color: #1a1d27; }
 .countriesTable .MuiSelect-icon { color: rgba(255,255,255,.5)!important; }
 .countriesTable .MuiIconButton-root.Mui-disabled { color: rgba(255,255,255,.5)!important; } 
+.countriesTable .MuiTableCell-root.highlight { color: #e24f3f; font-weight: 500; }
 .MuiTableRow-root > td:first-of-type { font-weight: 500; }
 .MuiTableRow-root > th:first-of-type,
 .MuiTableRow-root > td:first-of-type
