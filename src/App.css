@@ -15,7 +15,6 @@ footer a { color: inherit; }
 .bar.blue { background-color: #438ce6; }
 .bar.red { background-color: #e24f3f; }
 .bar.green { background-color: #47bd61; }
-.a {color: #8ce643}
 .recharts-line-dots { display: none; }
 .recharts-line-curve { stroke-width: 2; }
 .recharts-cartesian-grid line { stroke: #1a1d27; stroke-dasharray: none; }
