@@ -36,7 +36,7 @@ footer a { color: inherit; }
 .custom-tooltip.recovered { background: #47bd61; }
 .custom-tooltip.deaths { background: #e24f3f; }
 
-.radial .recharts-default-legend { position: relative; top: 10px; display: flex; flex-direction: row-reverse; justify-content: center; }
+.radial .recharts-default-legend { position: relative; top: 5px; display: flex; flex-direction: row-reverse; justify-content: center; }
 
 .countriesTable .card { padding: 0; }
 .countriesTable .MuiTableCell-stickyHeader { color: white; background-color: #1a1d27; }
@@ -59,5 +59,19 @@ footer a { color: inherit; }
 
 .recharts-pie-sector path { stroke-width: .5; }
 
+.virusStats-grid { padding-top: 15px; height: 100%; }
 .virusStats-grid .MuiGrid-item > div { background-color: #262b35; border-radius: 4px; display: flex; justify-content: center; align-items: center; height: 100%; flex-direction: column; }
 .virusStats-grid .stat { margin-top: 10px; }
+
+.infoBox { min-height: 350px; }
+.infoBox ul { padding-left: 20px; font-size: .94rem; margin: 10px 0; }
+.infoBox p { margin-top: 10px; }
+.infoBox ul span { font-weight: 500; }
+.infoBox .nhs-summary { font-size: .8rem; color: #ccc; text-align: center; margin: 30px 0 0 0; }
+.infoBox .nhs-summary a { transition: color .3s; text-decoration: none; color: #ccc; }
+.infoBox .nhs-summary a:hover { color: #438ce6; }
+
+@media screen and (max-width: 960px) {
+  .infoBox { min-height: auto; }
+  .radial .recharts-default-legend { top: 0; }
+}

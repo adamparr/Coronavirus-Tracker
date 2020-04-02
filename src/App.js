@@ -8,6 +8,7 @@ import CircularBarChart from './components/sections/CircularBarChart';
 import CountriesTable from './components/sections/CountriesTable';
 import CasesDistribution from './components/sections/CasesDistribution';
 import VirusStats from './components/sections/VirusStats';
+import InfoBox from './components/sections/InfoBox';
 
 import Loading from './components/Loading';
 
@@ -66,15 +67,16 @@ export default class App extends Component {
         <Header lastUpdated={this.state.globalData.updated} />
         <Container className="globalStats">
           <Grid container spacing={3} justify="center">
-            <Global
-              data={this.state.globalData}
-              timeline={this.state.globalTimeline}
-            />
+            <Global data={this.state.globalData} timeline={this.state.globalTimeline} />
+
             <CircularBarChart data={this.state.globalData} />
             <HistoryLineChart timeline={this.state.globalTimeline} />
+
             <CountriesTable data={this.state.countriesByCases} />
+            
             <CasesDistribution countryData={this.state.countriesByCases} />
             <VirusStats countryData={this.state.countriesByCases} globalData={this.state.globalData} />
+            <InfoBox />
           </Grid>
         </Container> 
         <Footer />
