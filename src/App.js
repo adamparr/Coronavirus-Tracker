@@ -7,6 +7,7 @@ import HistoryLineChart from './components/sections/HistoryLineChart';
 import CircularBarChart from './components/sections/CircularBarChart';
 import CountriesTable from './components/sections/CountriesTable';
 import CasesDistribution from './components/sections/CasesDistribution';
+import VirusStats from './components/sections/VirusStats';
 
 import Loading from './components/Loading';
 
@@ -72,7 +73,8 @@ export default class App extends Component {
             <CircularBarChart data={this.state.globalData} />
             <HistoryLineChart timeline={this.state.globalTimeline} />
             <CountriesTable data={this.state.countriesByCases} />
-            <CasesDistribution countryData={this.state.countriesByCases} totalCases={this.state.globalData.cases} />
+            <CasesDistribution countryData={this.state.countriesByCases} />
+            <VirusStats countryData={this.state.countriesByCases} globalData={this.state.globalData} />
           </Grid>
         </Container> 
         <Footer />
