@@ -72,11 +72,12 @@ export default class App extends Component {
             <CircularBarChart data={this.state.globalData} />
             <HistoryLineChart timeline={this.state.globalTimeline} />
 
-            <CountriesTable data={this.state.countriesByCases} />
-            
             <CasesDistribution countryData={this.state.countriesByCases} />
             <VirusStats countryData={this.state.countriesByCases} globalData={this.state.globalData} />
             <InfoBox />
+
+            <CountriesTable data={this.state.countriesByCases} />
+          
           </Grid>
         </Container> 
         <Footer />
