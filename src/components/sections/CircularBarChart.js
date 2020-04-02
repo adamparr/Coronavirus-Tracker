@@ -41,6 +41,10 @@ export default function CircularBarChart({ data }) {
     )
   }
 
+  const formatter = (value) => {
+    return numberWithCommas(value);
+  }
+
   return (
     <Grid xs={12} md={4} className="radial" item>
       <Card className="card" style={{ height: 400, position: 'relative' }}>
@@ -59,6 +63,7 @@ export default function CircularBarChart({ data }) {
               background={{fill: '#232731'}}
               dataKey="value"
               animationDuration={3000}
+              label={{fill: 'white', position: 'insideStart', fontSize: '16', letterSpacing: '1', formatter}}
             />
             <Tooltip content={<CustomTooltip/>} />
             <Legend verticalAlign="top" height={10}/>

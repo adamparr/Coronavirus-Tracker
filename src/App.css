@@ -15,7 +15,7 @@ footer a { color: inherit; }
 .bar.blue { background-color: #438ce6; }
 .bar.red { background-color: #e24f3f; }
 .bar.green { background-color: #47bd61; }
-
+.a {color: #8ce643}
 .recharts-line-dots { display: none; }
 .recharts-line-curve { stroke-width: 2; }
 .recharts-cartesian-grid line { stroke: #1a1d27; stroke-dasharray: none; }
@@ -40,6 +40,7 @@ footer a { color: inherit; }
 .countriesTable .MuiTablePagination-root { color: white; background-color: #1a1d27; }
 .countriesTable .MuiSelect-icon { color: rgba(255,255,255,.5)!important; }
 .countriesTable .MuiIconButton-root.Mui-disabled { color: rgba(255,255,255,.5)!important; } 
+.countriesTable .MuiTableCell-root { border-bottom: 1px solid rgba(255,255,255,.2); }
 .countriesTable .MuiTableCell-root.highlight { color: #e24f3f; font-weight: 500; }
 .MuiTableRow-root > td:first-of-type { font-weight: 500; }
 .MuiTableRow-root > th:first-of-type,
