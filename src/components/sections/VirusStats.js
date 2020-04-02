@@ -18,11 +18,11 @@ export default function VirusStats({countryData, globalData}) {
 
 
   return (
-     <Grid xs={12} md={5} item>
+     <Grid xs={12} md={6} lg={5} item>
       <Card className="card" style={{ height: 350 }}>
         <h3 className="card-title">Virus Statistics</h3>
 
-        <Grid className="virusStats-grid" container spacing={3} justify="center" style={{height: '100%'}}>
+        <Grid className="virusStats-grid" container spacing={3} justify="center">
           <Grid xs={6}item>
             <div>
               <span className="stat green-text">{recoveryRate.toFixed(2)}%</span>
@@ -46,7 +46,7 @@ export default function VirusStats({countryData, globalData}) {
 
           <Grid xs={6}item>
             <div>
-              <span className="stat yellow-text">{daysSince}<span class="days-small">days</span></span>
+              <span className="stat yellow-text">{daysSince}<span className="days-small">days</span></span>
               <p className="stat-text">Since First Case</p>
             </div>
           </Grid>

@@ -46,7 +46,7 @@ export default function CasesDistribution({countryData}) {
   }
 
   return (
-    <Grid xs={12} md={4} item>
+    <Grid xs={12} md={6} lg={4} item>
       <Card className="card" style={{ height: 350 }}>
         <h3 className="card-title">Distribution Of Cases By Country</h3>
 

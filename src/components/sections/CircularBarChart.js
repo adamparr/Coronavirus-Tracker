@@ -52,7 +52,7 @@ export default function CircularBarChart({ data }) {
         <ResponsiveContainer>
           <RadialBarChart
             innerRadius="30%" 
-            outerRadius="100%"
+            outerRadius="95%"
             data={data} 
             startAngle={135} 
             endAngle={-135}
