@@ -51,3 +51,5 @@ footer a { color: inherit; }
  
  .countriesTable .MuiTableHead-root th { padding-top: 20px; padding-bottom: 20px; }
  .countriesTable .MuiTablePagination-root { padding: 10px!important; }
+
+ .recharts-pie-sector path { stroke-width: .5; }

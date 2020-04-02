@@ -6,7 +6,7 @@ import numberWithCommas from '../../Helpers'
 
 export default function CasesDistribution({countryData, totalCases}) {
 
-  const slice = 6;
+  const slice = 7;
   const restOfWorld = countryData.slice(slice);
   var restOfWorldCases = 0;
 
@@ -17,8 +17,7 @@ export default function CasesDistribution({countryData, totalCases}) {
   var data = countryData.slice(0,slice);
   data.push({country: 'Other', cases: restOfWorldCases});
 
-
-  const COLORS = ['#352f83', '#4c2f83', '#6b2f83', '#832f7c', '#832f60', '#832f41', '#792e2e'];
+  const COLORS = ['#692424', '#692441', '#692454', '#692469', '#5b2469', '#4a2469', '#362469', '#222368'];
 
   const RADIAN = Math.PI / 180;
   const renderCustomizedLabel = ({
