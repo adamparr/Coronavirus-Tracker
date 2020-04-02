@@ -15,6 +15,11 @@ footer a { color: inherit; }
 .bar.blue { background-color: #438ce6; }
 .bar.red { background-color: #e24f3f; }
 .bar.green { background-color: #47bd61; }
+.blue-text { color: #438ce6; }
+.red-text { color: #e24f3f; }
+.green-text { color: #47bd61; }
+.yellow-text { color: #c3b43e; }
+.yellow-text .days-small { font-size: 1.6rem; margin-left: 2px; }
 .recharts-line-dots { display: none; }
 .recharts-line-curve { stroke-width: 2; }
 .recharts-cartesian-grid line { stroke: #1a1d27; stroke-dasharray: none; }
@@ -49,7 +54,10 @@ footer a { color: inherit; }
 .MuiTableRow-root > td:last-of-type
  { padding-right: 30px; }
  
- .countriesTable .MuiTableHead-root th { padding-top: 20px; padding-bottom: 20px; }
- .countriesTable .MuiTablePagination-root { padding: 10px!important; }
+.countriesTable .MuiTableHead-root th { padding-top: 20px; padding-bottom: 20px; }
+.countriesTable .MuiTablePagination-root { padding: 10px!important; }
 
- .recharts-pie-sector path { stroke-width: .5; }
+.recharts-pie-sector path { stroke-width: .5; }
+
+.virusStats-grid .MuiGrid-item > div { background-color: #262b35; border-radius: 4px; display: flex; justify-content: center; align-items: center; height: 100%; flex-direction: column; }
+.virusStats-grid .stat { margin-top: 10px; }
