@@ -4,7 +4,7 @@ import Card from '@material-ui/core/Card'
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts'
 import numberWithCommas from '../../Helpers'
 
-export default function CasesDistribution({countryData, totalCases}) {
+export default function CasesDistribution({countryData}) {
 
   const slice = 7;
   const restOfWorld = countryData.slice(slice);
@@ -36,7 +36,6 @@ export default function CasesDistribution({countryData, totalCases}) {
 
   const CustomTooltip = ({ payload, label, active }) => {
     if (!active) return null;
-    console.log(payload);
     data = payload[0].payload.payload;
 
     return (
@@ -48,7 +47,7 @@ export default function CasesDistribution({countryData, totalCases}) {
 
   return (
     <Grid xs={12} md={4} item>
-      <Card className="card" style={{ height: 400 }}>
+      <Card className="card" style={{ height: 350 }}>
         <h3 className="card-title">Distribution Of Cases By Country</h3>
 
         <ResponsiveContainer>

@@ -3,12 +3,12 @@ import moment from 'moment'
 
 export default function Header({lastUpdated}) {
 
-  lastUpdated = lastUpdated / 1000;
+  lastUpdated = moment.unix(lastUpdated / 1000).fromNow()
 
   return (
     <header>
       <h1>Coronavirus Tracker</h1> 
-      <p>Last updated {moment.unix(lastUpdated).fromNow()}</p>
+      <p>Last updated {lastUpdated}</p>
     </header>
   )
 }
