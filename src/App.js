@@ -6,6 +6,8 @@ import Global from "./components/sections/Global";
 import HistoryLineChart from './components/sections/HistoryLineChart';
 import CircularBarChart from './components/sections/CircularBarChart';
 import CountriesTable from './components/sections/CountriesTable';
+import CasesDistribution from './components/sections/CasesDistribution';
+
 import Loading from './components/Loading';
 
 import Grid from "@material-ui/core/Grid";
@@ -70,8 +72,9 @@ export default class App extends Component {
             <CircularBarChart data={this.state.globalData} />
             <HistoryLineChart timeline={this.state.globalTimeline} />
             <CountriesTable data={this.state.countriesByCases} />
+            <CasesDistribution countryData={this.state.countriesByCases} totalCases={this.state.globalData.cases} />
           </Grid>
-        </Container>
+        </Container> 
         <Footer />
       </div>
     );
