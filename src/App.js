@@ -27,36 +27,29 @@ export default class App extends Component {
   }
 
   componentDidMount = () => {
-    this.fetchData();
+    this.fetchData().then(data => {
+      this.setState({
+        globalData: data[0],
+        globalTimeline: data[1],
+        countriesByCases: data[2]
+      })
+    })
   };
 
   fetchData() {
-    // fetch global stats
-    fetch("https://api.coronastatistics.live/all")
-      .then(results => {
-        return results.json();
-      })
-      .then(globalData => {
-        this.setState({ globalData });
-      });
-
-    // fetch global stats timeline
-    fetch("https://api.coronastatistics.live/timeline/global")
-      .then(results => {
-        return results.json();
-      })
-      .then(globalTimeline => {
-        this.setState({ globalTimeline });
-      });
-
-    // fetch countries sorted by cases
-    fetch("https://api.coronastatistics.live/countries?sort=cases")
-      .then(results => {
-        return results.json();
-      })
-      .then(countriesByCases => {
-        this.setState({ countriesByCases });
-      });
+    return Promise.all([
+      fetch("https://api.coronastatistics.live/all"),
+      fetch("https://api.coronastatistics.live/timeline/global"),
+      fetch("https://api.coronastatistics.live/countries?sort=cases")
+    ]).then(responses => {
+      return Promise.all(responses.map(response => {
+        return response.json();
+      }))
+    }).then(data => {
+      return data;
+    }).catch(err => {
+      console.log(err);
+    })
   }
 
 
