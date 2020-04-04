@@ -57,7 +57,7 @@ export default class App extends Component {
     if (!this.state.globalData || !this.state.globalTimeline || !this.state.countriesByCases ) return <Loading />
     return (
       <div className="App">
-        <Header lastUpdated={this.state.globalData.updated} />
+        <Header updated={this.state.globalData.updated} />
         <Container className="globalStats">
           <Grid container spacing={3} justify="center">
             <Global data={this.state.globalData} timeline={this.state.globalTimeline} />

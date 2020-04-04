@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 
-export default function Header({lastUpdated}) {
+export default function Header({updated}) {
 
-  lastUpdated = moment.unix(lastUpdated / 1000).fromNow()
+  const [lastUpdated, setLastUpdated] = useState(moment.unix(updated / 1000).fromNow());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLastUpdated(moment.unix(updated / 1000).fromNow());
+    }, 30000);
+
+    return () => { clearInterval(interval) }
+  })
+
 
   return (
     <header>
