@@ -13,7 +13,7 @@ export default function Global({data, timeline}) {
     <>
       <Grid xs={12} sm={4} item>
         <Card className="card">
-          <h3 className="card-title">Cases</h3>
+          <h3 className="card-title">Global Cases</h3>
           <span className="stat">{numberWithCommas(cases)}</span>
           <span className="prevStat">{numberWithCommas(cases - prevCases)} today</span>
           <div className="bar blue"/>
@@ -22,7 +22,7 @@ export default function Global({data, timeline}) {
 
       <Grid xs sm={4} item>
         <Card className="card">
-          <h3 className="card-title">Deaths</h3>
+          <h3 className="card-title">Globa Deaths</h3>
           <span className="stat">{numberWithCommas(deaths)}</span>
           <span className="prevStat">{numberWithCommas(deaths - prevDeaths)} today</span>
           <div className="bar red"/>
@@ -31,7 +31,7 @@ export default function Global({data, timeline}) {
 
       <Grid xs sm={4} item>
         <Card className="card">
-          <h3 className="card-title">Recovered</h3>
+          <h3 className="card-title">Global Recovered</h3>
           <span className="stat">{numberWithCommas(recovered)}</span>
           <span className="prevStat">{numberWithCommas(recovered - prevRecovered)} today</span>
           <div className="bar green"/>

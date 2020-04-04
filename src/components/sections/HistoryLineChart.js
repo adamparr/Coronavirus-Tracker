@@ -48,7 +48,7 @@ export default function HistoryLineChart({timeline}) {
   return (
     <Grid xs={12} md={8} item>
       <Card className="card" style={{ height: 400 }}>
-        <h3 className="card-title">Change Over Time</h3>
+        <h3 className="card-title">Global Change Over Time</h3>
         <ResponsiveContainer>
           <LineChart margin={{top: 30,right: 15,bottom: 15,left: 15}} data={timelineArray}>
             <CartesianGrid />
