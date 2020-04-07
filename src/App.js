@@ -28,20 +28,21 @@ export default class App extends Component {
     };
   }
 
-  componentDidMount = () => {
-    this.fetchData().then(data => {
-
-      const [globalData, globalTimeline, countriesByCases] = [data[0], data[1], data[2]];
-
-      let lastUpdated = moment.unix( globalData.updated / 1000).fromNow();
-
-      this.setState({
-        globalData,
-        globalTimeline,
-        countriesByCases,
-        lastUpdated
+  async componentDidMount() {
+    try {
+      this.fetchData().then(data => {
+        this.updateState(data);
       })
-    })
+
+      setInterval(async () => {
+
+        this.fetchData().then(data => {
+          this.updateState(data);
+        })
+      }, 30000)
+    } catch(error) {
+      console.log(error);
+    }
   };
 
   fetchData() {
@@ -57,6 +58,20 @@ export default class App extends Component {
       return data;
     }).catch(err => {
       console.log(err);
+    })
+  }
+
+  updateState(data) {
+
+    const [globalData, globalTimeline, countriesByCases] = [data[0], data[1], data[2]];
+
+    let lastUpdated = moment.unix( globalData.updated / 1000).fromNow();
+
+    this.setState({
+      globalData,
+      globalTimeline,
+      countriesByCases,
+      lastUpdated
     })
   }
 
