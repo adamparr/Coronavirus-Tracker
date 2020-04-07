@@ -9,6 +9,7 @@ import CountriesTable from './components/sections/CountriesTable';
 import CasesDistribution from './components/sections/CasesDistribution';
 import VirusStats from './components/sections/VirusStats';
 import InfoBox from './components/sections/InfoBox';
+import moment from 'moment'
 
 import Loading from './components/Loading';
 
@@ -22,16 +23,23 @@ export default class App extends Component {
     this.state = {
       globalData: null, 
       globalTimeline: null,
-      countriesByCases: null
+      countriesByCases: null,
+      lastUpdated: null
     };
   }
 
   componentDidMount = () => {
     this.fetchData().then(data => {
+
+      const [globalData, globalTimeline, countriesByCases] = [data[0], data[1], data[2]];
+
+      let lastUpdated = moment.unix( globalData.updated / 1000).fromNow();
+
       this.setState({
-        globalData: data[0],
-        globalTimeline: data[1],
-        countriesByCases: data[2]
+        globalData,
+        globalTimeline,
+        countriesByCases,
+        lastUpdated
       })
     })
   };
@@ -57,7 +65,7 @@ export default class App extends Component {
     if (!this.state.globalData || !this.state.globalTimeline || !this.state.countriesByCases ) return <Loading />
     return (
       <div className="App">
-        <Header updated={this.state.globalData.updated} />
+        <Header lastUpdated={this.state.lastUpdated} />
         <Container className="globalStats">
           <Grid container spacing={3} justify="center">
             <Global data={this.state.globalData} timeline={this.state.globalTimeline} />
