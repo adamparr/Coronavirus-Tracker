@@ -16,6 +16,8 @@ import Loading from './components/Loading';
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 
+import fetchData from './components/API/Fetch';
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -30,36 +32,20 @@ export default class App extends Component {
 
   async componentDidMount() {
     try {
-      this.fetchData().then(data => {
+      fetchData().then(data => {
         this.updateState(data);
       })
 
       setInterval(async () => {
 
-        this.fetchData().then(data => {
+        fetchData().then(data => {
           this.updateState(data);
         })
-      }, 30000)
+      }, 60000)
     } catch(error) {
       console.log(error);
     }
   };
-
-  fetchData() {
-    return Promise.all([
-      fetch("https://api.coronastatistics.live/all"),
-      fetch("https://api.coronastatistics.live/timeline/global"),
-      fetch("https://api.coronastatistics.live/countries?sort=cases")
-    ]).then(responses => {
-      return Promise.all(responses.map(response => {
-        return response.json();
-      }))
-    }).then(data => {
-      return data;
-    }).catch(err => {
-      console.log(err);
-    })
-  }
 
   updateState(data) {
 
